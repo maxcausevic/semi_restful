@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+    {% load static%}
+</head>
+<body>
+
+</body>
+</html>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">title</th>
+            <th scope="col">network</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for show in db_show%}
+        <tr>
+            <th scope="row">{{show.id}}</th>
+            <td>{{show.title}}</td>
+            <td>{{show.network}}</td>
+            <td>{{show.release_date}}</td>
+            <td> <a href="/delete/{{show.id}}">delete</a> <a href="/show/{{show.id}}">Show</a> <a href="/edit/{{show.id}}">Edit</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

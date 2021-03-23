@@ -10,5 +10,4 @@ urlpatterns = [
     path('show/<show_id>', views.display_result),
     path('edit/<show_id>', views.edit_page),
     path('update/<show_id>', views.update)
-    
 ]

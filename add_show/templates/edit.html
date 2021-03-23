@@ -18,6 +18,13 @@
                 <div class="m-1 d-flex justify-content-end">
                 <p class="go_back"><a href="...">Go Back</a></p>
                 </div>
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                    <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
                 <form action="/update/{{show.id}}" method="post">
                     {% csrf_token %}
                     <div class="m-3">
